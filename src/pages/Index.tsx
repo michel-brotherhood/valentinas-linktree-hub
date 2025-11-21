@@ -1,4 +1,4 @@
-import { ExternalLink, Users, Briefcase, Calculator, MessageCircle, Instagram, Mail } from "lucide-react";
+import { MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-valentinas.svg";
 
@@ -6,44 +6,40 @@ const links = [
   {
     title: "Acessar Plataforma",
     url: "https://valentinasresolve.com.br/",
-    icon: ExternalLink,
     variant: "primary" as const,
   },
   {
     title: "Quero contratar um profissional",
     url: "https://www.valentinasresolve.com.br/contratar-servico",
-    icon: Users,
-    variant: "default" as const,
+    variant: "primary" as const,
   },
   {
     title: "Quero trabalhar na Valentina's",
     url: "https://www.valentinasresolve.com.br/trabalhe-conosco",
-    icon: Briefcase,
-    variant: "default" as const,
+    variant: "primary" as const,
   },
   {
     title: "Contabilidade Integrada",
     url: "https://www.valentinasresolve.com.br/contabilidade",
-    icon: Calculator,
-    variant: "default" as const,
-  },
-  {
-    title: "WhatsApp",
-    url: "https://www.valentinasresolve.com.br/contabilidade",
-    icon: MessageCircle,
-    variant: "secondary" as const,
-  },
-  {
-    title: "Instagram",
-    url: "https://www.instagram.com/valentinasresolve.brasil/",
-    icon: Instagram,
-    variant: "secondary" as const,
+    variant: "primary" as const,
   },
   {
     title: "Contato",
     url: "https://www.valentinasresolve.com.br/contato",
-    icon: Mail,
-    variant: "secondary" as const,
+    variant: "primary" as const,
+  },
+];
+
+const socialLinks = [
+  {
+    name: "WhatsApp",
+    url: "https://www.valentinasresolve.com.br/contabilidade",
+    icon: MessageCircle,
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/valentinasresolve.brasil/",
+    icon: Instagram,
   },
 ];
 
@@ -70,41 +66,53 @@ const Index = () => {
 
         {/* Links Section */}
         <div className="space-y-3 sm:space-y-4">
-          {links.map((link, index) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block animate-fade-in-up"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  opacity: 0,
-                }}
+          {links.map((link, index) => (
+            <a
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block animate-fade-in-up golden-glow-hover"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                opacity: 0,
+              }}
+            >
+              <Button
+                variant={link.variant}
+                className="w-full h-auto py-4 sm:py-5 px-6 text-base sm:text-lg font-semibold"
+                asChild
               >
-                <Button
-                  variant={link.variant}
-                  className="w-full h-auto py-4 sm:py-5 px-6 text-base sm:text-lg font-semibold group hover:scale-[1.02] active:scale-[0.98]"
-                  asChild
-                >
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0" />
-                      <span className="text-left">{link.title}</span>
-                    </div>
-                    <ExternalLink className="h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                  </div>
-                </Button>
-              </a>
-            );
-          })}
+                <div className="flex items-center justify-center">
+                  <span>{link.title}</span>
+                </div>
+              </Button>
+            </a>
+          ))}
         </div>
 
         {/* Footer */}
-        <footer className="text-center mt-12 sm:mt-16 text-sm text-muted-foreground animate-fade-in-up" style={{ animationDelay: "0.8s", opacity: 0 }}>
-          <p>© 2024 Valentina's Resolve. Todos os direitos reservados.</p>
+        <footer className="mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: "0.6s", opacity: 0 }}>
+          <div className="flex justify-center gap-6 mb-6">
+            {socialLinks.map((social, index) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon-link"
+                  aria-label={social.name}
+                >
+                  <Icon className="h-6 w-6" />
+                </a>
+              );
+            })}
+          </div>
+          <p className="text-center text-sm text-muted-foreground">
+            © 2024 Valentina's Resolve. Todos os direitos reservados.
+          </p>
         </footer>
       </div>
     </main>
