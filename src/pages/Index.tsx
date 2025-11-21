@@ -1,4 +1,4 @@
-import { MessageCircle, Instagram } from "lucide-react";
+import { MessageCircle, Instagram, ExternalLink, Briefcase, Calculator, Mail, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-valentinas.svg";
 
@@ -8,30 +8,35 @@ const links = [
     url: "https://valentinasresolve.com.br/",
     variant: "primary" as const,
     size: "lg" as const,
+    icon: Home,
   },
   {
     title: "Quero contratar um profissional",
     url: "https://www.valentinasresolve.com.br/contratar-servico",
     variant: "primary" as const,
     size: "default" as const,
+    icon: ExternalLink,
   },
   {
     title: "Quero trabalhar na Valentina's",
     url: "https://www.valentinasresolve.com.br/trabalhe-conosco",
     variant: "primary" as const,
     size: "default" as const,
+    icon: Briefcase,
   },
   {
     title: "Contabilidade Integrada",
     url: "https://www.valentinasresolve.com.br/contabilidade",
     variant: "primary" as const,
     size: "default" as const,
+    icon: Calculator,
   },
   {
     title: "Contato",
     url: "https://www.valentinasresolve.com.br/contato",
     variant: "primary" as const,
     size: "sm" as const,
+    icon: Mail,
   },
 ];
 
@@ -69,28 +74,34 @@ const Index = () => {
 
         {/* Links Section */}
         <div className="space-y-3">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block animate-fade-in-up golden-glow-hover"
-              style={{
-                animationDelay: `${index * 0.1}s`,
-                opacity: 0,
-              }}
-            >
-              <Button
-                variant={link.variant}
-                size={link.size}
-                className="w-full shine-effect"
-                asChild
+          {links.map((link, index) => {
+            const Icon = link.icon;
+            return (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block animate-fade-in-up golden-glow-hover"
+                style={{
+                  animationDelay: `${index * 0.1}s`,
+                  opacity: 0,
+                }}
               >
-                <span>{link.title}</span>
-              </Button>
-            </a>
-          ))}
+                <Button
+                  variant={link.variant}
+                  size={link.size}
+                  className="w-full shine-effect"
+                  asChild
+                >
+                  <div className="flex items-center justify-center gap-3">
+                    <Icon className="h-5 w-5 flex-shrink-0" />
+                    <span>{link.title}</span>
+                  </div>
+                </Button>
+              </a>
+            );
+          })}
         </div>
 
         {/* Footer */}
