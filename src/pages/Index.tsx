@@ -45,17 +45,15 @@ const socialLinks = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted/30 flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-2xl">
+    <main className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
+      <div className="w-full max-w-xl">
         {/* Logo Section */}
         <div className="text-center mb-8 sm:mb-12 animate-scale-in">
-          <div className="inline-block bg-card rounded-3xl p-6 sm:p-8 shadow-[var(--shadow-soft)] mb-6">
-            <img 
-              src={logo} 
-              alt="Valentina's Resolve Logo" 
-              className="h-20 sm:h-28 w-auto mx-auto"
-            />
-          </div>
+          <img 
+            src={logo} 
+            alt="Valentina's Resolve Logo" 
+            className="h-24 sm:h-32 w-auto mx-auto mb-6"
+          />
           <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
             Valentina's Resolve
           </h1>
@@ -65,7 +63,7 @@ const Index = () => {
         </div>
 
         {/* Links Section */}
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3">
           {links.map((link, index) => (
             <a
               key={index}
@@ -80,20 +78,18 @@ const Index = () => {
             >
               <Button
                 variant={link.variant}
-                className="w-full h-auto py-4 sm:py-5 px-6 text-base sm:text-lg font-semibold"
+                className="w-full py-4 px-6 text-base font-bold"
                 asChild
               >
-                <div className="flex items-center justify-center">
-                  <span>{link.title}</span>
-                </div>
+                <span>{link.title}</span>
               </Button>
             </a>
           ))}
         </div>
 
         {/* Footer */}
-        <footer className="mt-12 sm:mt-16 animate-fade-in-up" style={{ animationDelay: "0.6s", opacity: 0 }}>
-          <div className="flex justify-center gap-6 mb-6">
+        <footer className="mt-12 animate-fade-in-up" style={{ animationDelay: "0.6s", opacity: 0 }}>
+          <div className="flex justify-center gap-4 mb-4">
             {socialLinks.map((social, index) => {
               const Icon = social.icon;
               return (
@@ -105,12 +101,12 @@ const Index = () => {
                   className="social-icon-link"
                   aria-label={social.name}
                 >
-                  <Icon className="h-6 w-6" />
+                  <Icon className="h-5 w-5" />
                 </a>
               );
             })}
           </div>
-          <p className="text-center text-sm text-muted-foreground">
+          <p className="text-center text-xs text-muted-foreground">
             © 2024 Valentina's Resolve. Todos os direitos reservados.
           </p>
         </footer>
