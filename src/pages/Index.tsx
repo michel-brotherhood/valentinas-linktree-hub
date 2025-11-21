@@ -1,5 +1,6 @@
 import { MessageCircle, Instagram, ExternalLink, Briefcase, Calculator, Mail, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { GoldenParticles } from "@/components/GoldenParticles";
 import logo from "@/assets/logo-valentinas.svg";
 
 const links = [
@@ -55,8 +56,9 @@ const socialLinks = [
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6">
-      <div className="w-full max-w-xl">
+    <main className="min-h-screen bg-background flex items-center justify-center p-4 sm:p-6 relative">
+      <GoldenParticles />
+      <div className="w-full max-w-xl relative z-10">
         {/* Logo Section */}
         <div className="text-center mb-8 sm:mb-12 animate-scale-in">
           <img 
