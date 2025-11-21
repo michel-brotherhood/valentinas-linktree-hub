@@ -175,6 +175,22 @@ All colors MUST be HSL.
     filter: drop-shadow(0 0 12px hsl(38 55% 58% / 0.8));
   }
   
+  .logo-glow-effect {
+    animation: logo-pulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 20px hsl(38 55% 58% / 0.4));
+  }
+  
+  @keyframes logo-pulse {
+    0%, 100% {
+      filter: drop-shadow(0 0 20px hsl(38 55% 58% / 0.4));
+      transform: scale(1);
+    }
+    50% {
+      filter: drop-shadow(0 0 30px hsl(38 55% 58% / 0.6));
+      transform: scale(1.02);
+    }
+  }
+  
   @keyframes fade-in-up {
     from {
       opacity: 0;

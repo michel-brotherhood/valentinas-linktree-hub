@@ -8,7 +8,7 @@ const links = [
     title: "Acessar Plataforma",
     url: "https://valentinasresolve.com.br/",
     variant: "primary" as const,
-    size: "lg" as const,
+    size: "default" as const,
     icon: Home,
   },
   {
@@ -36,7 +36,7 @@ const links = [
     title: "Contato",
     url: "https://www.valentinasresolve.com.br/contato",
     variant: "primary" as const,
-    size: "sm" as const,
+    size: "default" as const,
     icon: Mail,
   },
 ];
@@ -60,18 +60,12 @@ const Index = () => {
       <GoldenParticles />
       <div className="w-full max-w-xl relative z-10">
         {/* Logo Section */}
-        <div className="text-center mb-8 sm:mb-12 animate-scale-in">
+        <div className="text-center mb-12 animate-scale-in">
           <img 
             src={logo} 
             alt="Valentina's Resolve Logo" 
-            className="h-24 sm:h-32 w-auto mx-auto mb-6"
+            className="h-28 sm:h-36 w-auto mx-auto logo-glow-effect"
           />
-          <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-            Valentina's Resolve
-          </h1>
-          <p className="text-muted-foreground text-sm sm:text-base">
-            Conectando você aos nossos serviços
-          </p>
         </div>
 
         {/* Links Section */}
