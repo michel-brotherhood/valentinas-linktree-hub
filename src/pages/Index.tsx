@@ -7,26 +7,31 @@ const links = [
     title: "Acessar Plataforma",
     url: "https://valentinasresolve.com.br/",
     variant: "primary" as const,
+    size: "lg" as const,
   },
   {
     title: "Quero contratar um profissional",
     url: "https://www.valentinasresolve.com.br/contratar-servico",
     variant: "primary" as const,
+    size: "default" as const,
   },
   {
     title: "Quero trabalhar na Valentina's",
     url: "https://www.valentinasresolve.com.br/trabalhe-conosco",
     variant: "primary" as const,
+    size: "default" as const,
   },
   {
     title: "Contabilidade Integrada",
     url: "https://www.valentinasresolve.com.br/contabilidade",
     variant: "primary" as const,
+    size: "default" as const,
   },
   {
     title: "Contato",
     url: "https://www.valentinasresolve.com.br/contato",
     variant: "primary" as const,
+    size: "sm" as const,
   },
 ];
 
@@ -78,7 +83,8 @@ const Index = () => {
             >
               <Button
                 variant={link.variant}
-                className="w-full py-4 px-6 text-base font-bold"
+                size={link.size}
+                className="w-full shine-effect"
                 asChild
               >
                 <span>{link.title}</span>
