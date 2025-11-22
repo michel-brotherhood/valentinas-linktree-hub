@@ -1,7 +1,7 @@
 import { MessageCircle, Instagram, ExternalLink, Briefcase, Calculator, Mail, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GoldenParticles } from "@/components/GoldenParticles";
-import logo from "@/assets/logo-valentinas.svg";
+import logo from "@/assets/logo-valentinas-new.svg";
 
 const links = [
   {
