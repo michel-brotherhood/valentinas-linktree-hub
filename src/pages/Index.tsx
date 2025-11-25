@@ -12,13 +12,6 @@ const links = [
     icon: Home,
   },
   {
-    title: "Quero contratar um profissional",
-    url: "https://www.valentinasresolve.com.br/contratar-servico",
-    variant: "primary" as const,
-    size: "default" as const,
-    icon: ExternalLink,
-  },
-  {
     title: "Quero trabalhar na Valentina's",
     url: "https://www.valentinasresolve.com.br/trabalhe-conosco",
     variant: "primary" as const,
@@ -44,7 +37,7 @@ const links = [
 const socialLinks = [
   {
     name: "WhatsApp",
-    url: "https://www.valentinasresolve.com.br/contabilidade",
+    url: "https://www.valentinasresolve.com.br/contato",
     icon: MessageCircle,
   },
   {
