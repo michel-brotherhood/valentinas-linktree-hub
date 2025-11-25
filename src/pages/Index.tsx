@@ -66,7 +66,7 @@ const Index = () => {
             alt="Valentina's Resolve Logo" 
             className="h-28 sm:h-36 w-auto mx-auto logo-glow-effect"
           />
-          <p className="text-lg sm:text-xl mt-6 animate-fade-in-up font-light tracking-wide" style={{ animationDelay: "0.3s", opacity: 0, color: "#ffffff" }}>
+          <p className="text-lg sm:text-xl mt-10 animate-fade-in-up font-light tracking-wide" style={{ animationDelay: "0.3s", opacity: 0, color: "#ffffff" }}>
             Serviços que conectam, resultados que transformam.
           </p>
         </div>
