@@ -233,4 +233,29 @@ All colors MUST be HSL.
   .animate-float-particle {
     animation: float-particle linear infinite;
   }
+  
+  .slogan-shimmer {
+    animation: fade-in-up 0.8s ease-out forwards, text-shimmer 3s ease-in-out 1s infinite;
+    background: linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 40%,
+      hsl(38 55% 68%) 50%,
+      #ffffff 60%,
+      #ffffff 100%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  @keyframes text-shimmer {
+    0%, 100% {
+      background-position: 200% center;
+    }
+    50% {
+      background-position: 0% center;
+    }
+  }
 }
